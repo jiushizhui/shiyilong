@@ -1,11 +1,7 @@
 <?php
-echo phpinfo();
-for($i=0;$i<100;$i++)
-{
-echo $i.'<br.>';
+//	echo phpinfo();
 
-}
-echo '我是中华人民共和国';
-echo 'wwww'
+$r = rand(0,100000);
+echo "my first use git $r";
 
 ?>
