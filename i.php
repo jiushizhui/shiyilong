@@ -6,6 +6,6 @@ echo $i.'<br.>';
 
 }
 echo '我是中华人民共和国';
-
+echo 'wwww'
 
 ?>
