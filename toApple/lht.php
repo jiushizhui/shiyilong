@@ -1,10 +1,7 @@
 <?php  
   
 // ??????????deviceToken???????????????  
-//	$deviceToken = '27c6d113377fe1944ce0df78918c76f3ef50a25a732736cec6a13184a7d1e78c';  
-
-$deviceToken = 'b59ec88deafc79503a57a1b42b68de9eee96e91343e3dff62aee6c9fc62a843e';
-
+$deviceToken = '27c6d113377fe1944ce0df78918c76f3ef50a25a732736cec6a13184a7d1e78c';  
   
 // Put your private key's passphrase here:  
 $passphrase = '123456';  
@@ -15,10 +12,8 @@ $message = 'My first push test!';
 ////////////////////////////////////////////////////////////////////////////////  
   
 $ctx = stream_context_create();  
-stream_context_set_option($ctx, 'ssl', 'local_cert', '~ck.pem');
-stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);  
-
-//stream_context_set_option($ctx, 'ssl', 'local_cert', 'qps_MiDou.pem'); 
+stream_context_set_option($ctx, 'ssl', 'local_cert', 'Apns_Product.pem');  
+//stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);  
   
   
 $a = rand(0,1);
@@ -30,7 +25,7 @@ if($a){
 	$fp = stream_socket_client($urls, $err, $errstr, 60, STREAM_CLIENT_CONNECT, $ctx);
 }
 
-$message .= 'qps_MiDou'.$urls;
+$message .= $urls;
 // Open a connection to the APNS server  
 //??????????  
  //$fp = stream_socket_client(?ssl://gateway.push.apple.com:2195?, $err, $errstr, 60, //STREAM_CLIENT_CONNECT, $ctx);  
